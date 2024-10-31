@@ -1,6 +1,7 @@
 const { Server } = require("socket.io");
 const { createServer } = require("http");
 const { v4 } = require("uuid");
+require("dotenv").config()
 const httpServer = createServer();
 
 const io = new Server(httpServer, {
@@ -8,7 +9,7 @@ const io = new Server(httpServer, {
     origin: "*",
   },
 });
-httpServer.listen(3000, () => console.log("server runnig on port 3000"));
+httpServer.listen(process.env.PORT || 3000, () => console.log("server runnig on port 3000"));
 
 const getRoomMemberCount = (roomId) => {
   const room = io.sockets.adapter.rooms.get(roomId);
