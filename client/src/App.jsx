@@ -114,7 +114,7 @@ function App() {
         {createRoomModal && <Modal handleClick={createRoomDone} text="create a room" />}
         {username === "" ? <dialog open >
             <div className='flex flex-col justify-center items-center' >
-                <p>Enter your randi name</p>
+                <p>Enter your name</p>
                 <input ref={usernameRef} className='border-2  py-2 px-6' placeholder='username' />
                 <button onClick={handleButtonClick} className='hover:scale-110 hover:bg-amber-200 active:scale-95 duration-75 ease-linear cursor-pointer w-full rounded-sm bg-red-100 full' >ok</button>
             </div>
